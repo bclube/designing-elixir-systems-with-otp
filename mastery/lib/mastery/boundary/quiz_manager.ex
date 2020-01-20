@@ -4,8 +4,8 @@ defmodule Mastery.Boundary.QuizManager do
 
   ### API
 
-  def start_link(name \\ __MODULE__) do
-    Agent.start_link(fn -> %{} end, name: name)
+  def start_link(opts \\ []) do
+    Agent.start_link(fn -> %{} end, opts)
   end
 
   def build_quiz(name \\ __MODULE__, quiz_fields) do
