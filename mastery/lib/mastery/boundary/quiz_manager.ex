@@ -27,4 +27,8 @@ defmodule Mastery.Boundary.QuizManager do
   def lookup_quiz_by_title(name \\ __MODULE__, quiz_title) do
     Agent.get(name, &Map.get(&1, quiz_title))
   end
+
+  def remove_quiz(name \\ __MODULE__, quiz_title) do
+    Agent.update(name, &Map.delete(&1, quiz_title))
+  end
 end
